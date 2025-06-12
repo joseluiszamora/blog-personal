@@ -3,6 +3,8 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { ThemeDebugInfo } from "@/components/ui/ThemeDebugInfo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,11 +60,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${poppins.variable}`}>
+    <html
+      lang="es"
+      className={`${inter.variable} ${poppins.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function getInitialTheme() {
+                  const savedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
+                  const systemPreference = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  return savedTheme || systemPreference;
+                }
+                
+                const theme = getInitialTheme();
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.style.colorScheme = 'light';
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <ThemeProvider />
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />
+        <ThemeDebugInfo />
       </body>
     </html>
   );

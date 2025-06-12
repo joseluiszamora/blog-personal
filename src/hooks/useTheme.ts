@@ -9,16 +9,33 @@ export function useTheme() {
   useEffect(() => {
     setMounted(true);
 
-    // Obtener tema guardado o detectar preferencia del sistema
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark";
-    const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
-    const initialTheme = savedTheme || systemPreference;
+    // Detectar el tema actual del DOM (que ya fue establecido por ThemeProvider)
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
 
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(isDarkMode ? "dark" : "light");
+    }
+
+    // Escuchar cambios en las preferencias del sistema
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      // Solo aplicar cambio del sistema si no hay tema guardado
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.classList.toggle("dark", newTheme === "dark");
+        document.documentElement.style.colorScheme = newTheme;
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -26,7 +43,22 @@ export function useTheme() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.classList.toggle("dark", newTheme === "dark");
+    document.documentElement.style.colorScheme = newTheme;
   };
 
-  return { theme, toggleTheme, mounted };
+  const resetToSystem = () => {
+    localStorage.removeItem("theme");
+    const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    setTheme(systemPreference);
+    document.documentElement.classList.toggle(
+      "dark",
+      systemPreference === "dark"
+    );
+    document.documentElement.style.colorScheme = systemPreference;
+  };
+
+  return { theme, toggleTheme, resetToSystem, mounted };
 }
