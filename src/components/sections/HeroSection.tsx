@@ -12,7 +12,7 @@ export function HeroSection() {
               ¡Hola! 👋 Soy
             </p>
             <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-secondary-900 dark:text-white mb-6">
-              Juan Zamora
+              Jose Luis Zamora
             </h1>
             <h2 className="font-heading font-semibold text-xl sm:text-2xl lg:text-3xl text-primary-600 dark:text-primary-400 mb-8">
               Desarrollador Full Stack

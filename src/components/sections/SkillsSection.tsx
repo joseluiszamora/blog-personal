@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 import { skills } from "@/data";
 import type { Skill } from "@/types";
 

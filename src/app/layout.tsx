@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Juan Zamora - Desarrollador Full Stack",
+  title: "Jose Luis - Desarrollador Full Stack",
   description:
     "Desarrollador Full Stack especializado en React, Node.js y Flutter. Creando experiencias digitales modernas y funcionales.",
   keywords: [
@@ -28,20 +28,20 @@ export const metadata: Metadata = {
     "javascript",
     "typescript",
   ],
-  authors: [{ name: "Juan Zamora" }],
-  creator: "Juan Zamora",
+  authors: [{ name: "Jose Luis" }],
+  creator: "Jose Luis",
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://tu-dominio.com",
-    title: "Juan Zamora - Desarrollador Full Stack",
+    title: "Jose Luis - Desarrollador Full Stack",
     description:
       "Desarrollador Full Stack especializado en React, Node.js y Flutter",
-    siteName: "Juan Zamora Portfolio",
+    siteName: "Jose Luis Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Zamora - Desarrollador Full Stack",
+    title: "Jose Luis - Desarrollador Full Stack",
     description:
       "Desarrollador Full Stack especializado en React, Node.js y Flutter",
     creator: "@tu-usuario",

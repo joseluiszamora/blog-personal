@@ -4,7 +4,7 @@ import { experiences } from "@/data";
 function Timeline() {
   return (
     <div className="relative">
-      {experiences.map((exp, index) => (
+      {experiences.map((exp) => (
         <div key={exp.id} className="relative pl-8 pb-8 last:pb-0">
           {/* Línea vertical */}
           <div className="absolute left-0 top-0 h-full w-px bg-secondary-200 dark:bg-secondary-700" />

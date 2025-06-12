@@ -1,4 +1,4 @@
-# Portfolio Personal - Juan Zamora
+# Portfolio Personal - Jose Luis Zamora
 
 Sitio web profesional para marca personal como desarrollador Full Stack, construido con Next.js 15, TypeScript y Tailwind CSS.
 
@@ -235,7 +235,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 
 ## 📞 Contacto
 
-**Juan Zamora**
+**Jose Luis Zamora**
 
 - Website: [tu-dominio.com](https://tu-dominio.com)
 - Email: tu-email@ejemplo.com

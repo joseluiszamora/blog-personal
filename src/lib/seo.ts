@@ -24,16 +24,16 @@ export function generateSEO({
   ogImage = "/og-image.jpg",
 }: SEOProps = {}): Metadata {
   const fullTitle = title
-    ? `${title} | Juan Zamora`
-    : "Juan Zamora - Desarrollador Full Stack";
+    ? `${title} | Jose Luis Zamora`
+    : "Jose Luis Zamora - Desarrollador Full Stack";
 
   return {
     title: fullTitle,
     description,
     keywords: keywords.join(", "),
-    authors: [{ name: "Juan Zamora" }],
-    creator: "Juan Zamora",
-    publisher: "Juan Zamora",
+    authors: [{ name: "Jose Luis Zamora" }],
+    creator: "Jose Luis Zamora",
+    publisher: "Jose Luis Zamora",
     robots: {
       index: true,
       follow: true,
@@ -51,7 +51,7 @@ export function generateSEO({
       url: canonicalUrl || "https://tu-dominio.com",
       title: fullTitle,
       description,
-      siteName: "Juan Zamora Portfolio",
+      siteName: "Jose Luis Zamora Portfolio",
       images: [
         {
           url: ogImage,

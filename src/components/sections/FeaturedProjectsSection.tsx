@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { projects } from "@/data";
