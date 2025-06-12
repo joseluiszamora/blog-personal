@@ -67,6 +67,9 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
+      ringColor: {
+        "primary-500": "#3b82f6",
+      },
     },
   },
   plugins: [],

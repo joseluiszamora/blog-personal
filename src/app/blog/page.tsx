@@ -186,7 +186,7 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="tu-email@ejemplo.com"
-                className="flex-1 px-4 py-2 border border-secondary-300 dark:border-secondary-600 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="flex-1 px-4 py-2 border border-secondary-300 dark:border-secondary-600 rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <Button size="sm" className="whitespace-nowrap">
                 Suscribirse

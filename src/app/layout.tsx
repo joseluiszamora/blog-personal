@@ -59,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white">
+      <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />

@@ -8,7 +8,7 @@ interface CardProps {
 
 export function Card({ children, className = "", hover = false }: CardProps) {
   const baseClasses =
-    "bg-white dark:bg-secondary-900 rounded-xl shadow-sm border border-secondary-200 dark:border-secondary-700";
+    "bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700";
   const hoverClasses = hover
     ? "hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
     : "";
