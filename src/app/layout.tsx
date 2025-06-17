@@ -66,7 +66,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -75,7 +75,7 @@ export default function RootLayout({
                   const systemPreference = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                   return savedTheme || systemPreference;
                 }
-                
+
                 const theme = getInitialTheme();
                 if (theme === 'dark') {
                   document.documentElement.classList.add('dark');
@@ -87,15 +87,46 @@ export default function RootLayout({
               })();
             `,
           }}
-        />
+        /> */}
       </head>
-      <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-        <ThemeProvider />
-        <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
-        <Footer />
+      {/* <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white"> */}
+      <body className="antialiased ">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main className="min-h-screen pt-16">{children}</main>
+          <Footer />
+        </ThemeProvider>
         <ThemeDebugInfo />
       </body>
     </html>
   );
 }
+
+// app/layout.tsx
+// import { Footer } from "../components/layout/Footer";
+// import { Navbar } from "../components/layout/Navbar";
+// import { ThemeProvider } from "../components/ui/ThemeProvider";
+// import "./globals.css";
+
+// export const metadata = {
+//   title: "Mi App",
+//   description: "Ejemplo dark/light con next-themes",
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html suppressHydrationWarning>
+//       <body className="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+// <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+//   <Navbar />
+//   <main className="min-h-screen pt-16">{children}</main>
+//   <Footer />
+// </ThemeProvider>
+//       </body>
+//     </html>
+//   );
+// }
