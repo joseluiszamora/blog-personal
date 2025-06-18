@@ -1,8 +1,11 @@
-import Link from "next/link";
+// import Link from "next/link";
+"use client";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { projects } from "@/data";
 import type { Project } from "@/types";
+import { ButtonStyled } from "../ui/ButtonStyled";
+import { ButtonGithub } from "../ui/ButtonGithub";
 
 interface ProjectCardProps {
   project: Project;
@@ -115,7 +118,7 @@ export function FeaturedProjectsSection() {
     <section className="py-20 bg-secondary-50 dark:bg-secondary-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-secondary-900 dark:text-white mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-secondary-900 mb-4">
             Proyectos Destacados
           </h2>
           <p className="text-lg text-secondary-600 dark:text-secondary-300 max-w-2xl mx-auto mb-8">
@@ -130,6 +133,14 @@ export function FeaturedProjectsSection() {
         </div>
 
         <div className="text-center">
+          <ButtonStyled
+            text="Ver todos los proyectos"
+            onClick={() => console.log("¡Botón clickeado!")}
+          />
+          <ButtonGithub></ButtonGithub>
+        </div>
+
+        {/* <div className="text-center">
           <Link href="/portfolio">
             <Button size="lg">
               Ver todos los proyectos
@@ -148,7 +159,7 @@ export function FeaturedProjectsSection() {
               </svg>
             </Button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

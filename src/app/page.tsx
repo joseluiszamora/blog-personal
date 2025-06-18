@@ -1,15 +1,15 @@
-// import { HeroSection } from "@/components/sections/HeroSection";
-// import { SkillsSection } from "@/components/sections/SkillsSection";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
 import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
-// import { CTASection } from "@/components/sections/CTASection";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
-      {/* <SkillsSection />  */}
+      <HeroSection />
+      <SkillsSection />
       <FeaturedProjectsSection />
-      {/* <CTASection /> */}
+      <CTASection />
     </>
   );
 }
